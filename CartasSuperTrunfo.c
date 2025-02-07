@@ -21,18 +21,24 @@ int main() {
     int código_da_cidade, população, número_de_pontos_turísticos;
     char nome[255];
     float área, PIB;
+    float densidade_populacional;
+    float pib_per_capita;
 
-    printf("Desafio Cartas Super Trunfo!\n");
+    printf("*** Desafio Cartas Super Trunfo! ***\n");
 
-    printf("Digite o código da sua cidade: ");
+    printf("\nDigite o código da sua cidade: ");
     scanf("%d", &código_da_cidade);
 
     printf("\nDigite o nome da sua cidade: ");
     scanf("%s", &nome);
 
+    while (getchar() != '\n');
+
     printf("\nDigite a população da sua cidade: ");
     scanf("%d", &população);
 
+    while (getchar() != '\n');
+    
     printf("\nDigite o área da sua cidade: ");
     scanf("%f", &área);
 
@@ -44,7 +50,10 @@ int main() {
     printf("\nDigite o número de pontos turísticos da sua cidade: ");
     scanf("%d", &número_de_pontos_turísticos);
 
-    printf("Código da cidade: %d\nNome: %s\nPopulação: %d\nÁrea: %f\nPIB: %f\nNúmero de pontos turísticos: %d", código_da_cidade, nome, população, área, PIB, número_de_pontos_turísticos);
+    densidade_populacional = (população / área);
+    pib_per_capita = (PIB / população);
+
+    printf("Código da cidade: %d\nNome: %s\nPopulação: %d\nÁrea: %f\nPIB: %f\nNúmero de pontos turísticos: %d\nPib per Capita: %f\nDensidade Populacional: %f", código_da_cidade, nome, população, área, PIB, número_de_pontos_turísticos, pib_per_capita, densidade_populacional);
 
 
     return 0;
